@@ -30,7 +30,7 @@ contract FundingFundMe is Script {
 contract WithdrawFundMe is Script {
     uint256 constant FUND_AMOUNT = 0.05 ether;
 
-    function fundFundMe(address _mostRecentDeployment) public {
+    function WithdrawFromFundMe(address _mostRecentDeployment) public {
         vm.startBroadcast();
         FundMe(payable(_mostRecentDeployment)).withdraw();
         vm.stopBroadcast();
@@ -42,7 +42,7 @@ contract WithdrawFundMe is Script {
             block.chainid
         );
         vm.startBroadcast();
-        fundFundMe(mostRecentDeployment);
+        WithdrawFromFundMe(mostRecentDeployment);
         vm.stopBroadcast();
     }
 }
